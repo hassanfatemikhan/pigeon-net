@@ -8,14 +8,11 @@ print("ClIENT UP")
 -- MAIN LOOP
 while true do
 
-    client:send("nice\n")
-    socket.sleep(10)
+    io.write("Input - ")
+    client:send(io.read() .. "\n")
+    client:send("MOO\n")
 
     local message = client:receive()
-
-    if message then
-    print("Received message: " .. message)
-    end
 end
 
 

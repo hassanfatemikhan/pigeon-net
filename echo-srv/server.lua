@@ -13,10 +13,20 @@ while true do
 
     while true do
     local message = client:receive()
+    local key = client:receive()
 
     -- CLOSE CLIENT
     if not message then
     break end
+    
+    -- CHECK KEY
+    if not key then 
+        break
+    elseif key == "MOOO" then
+        print("Rechived unwanted connection, LOL")
+        break
+    end
+    
 
     if message then
     print("Data - " .. message)
